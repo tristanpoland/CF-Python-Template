@@ -1,0 +1,11 @@
+---
+applications:
+- name: my-python-app
+  memory: 128M
+  instances: 1
+  random-route: true
+  buildpacks:
+    - python_buildpack
+  command: gunicorn --bind=0.0.0.0:$PORT app:app
+  env:
+    PYTHON_VERSION: 3.11.x
